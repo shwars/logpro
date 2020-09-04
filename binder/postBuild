@@ -1,0 +1,8 @@
+#!/bin/bash
+sudo apt-add-repository ppa:swi-prolog/stable
+sudo apt-get update
+sudo apt-get install swi-prolog
+python -m pip install --upgrade jswipl
+cd ~/.local/share/jupyter/kernels
+mkdir jswipl && cd jswipl
+wget https://raw.githubusercontent.com/targodan/jupyter-swi-prolog/master/kernel.json
