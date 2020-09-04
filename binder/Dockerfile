@@ -2,11 +2,11 @@ FROM python:3.7-slim
 RUN pip install --no-cache notebook
 
 USER root
-apt-get install software-properties-common
-apt-add-repository ppa:swi-prolog/stable
-apt-get update
-apt-get install swi-prolog
-python -m pip install --upgrade jswipl
+RUN apt-get install software-properties-common
+RUN apt-add-repository ppa:swi-prolog/stable
+RUN apt-get update
+RUN apt-get install swi-prolog
+RUN python -m pip install --upgrade jswipl
 
 ### create user with a home directory
 ARG NB_USER
