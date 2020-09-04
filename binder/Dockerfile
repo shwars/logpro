@@ -2,7 +2,7 @@ FROM python:3.7-slim
 RUN pip install --no-cache notebook
 
 USER root
-RUN apt-get update && apt-get install -y software-properties-common
+RUN apt-get update && apt-get install -y software-properties-common gnupg
 RUN apt-add-repository ppa:swi-prolog/stable
 RUN apt-get update && apt-get install -y swi-prolog
 RUN python -m pip install --upgrade jswipl
