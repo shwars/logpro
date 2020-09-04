@@ -19,9 +19,6 @@ RUN adduser --disabled-password \
 USER ${NB_USER}
 
 WORKDIR ${HOME}
-RUN mkdir -p ${HOME}/.local/share/jupyter/kernels
-RUN cd ${HOME}/.local/share/jupyter/kernels
-RUN mkdir jswipl && cd jswipl
-RUN wget https://raw.githubusercontent.com/targodan/jupyter-swi-prolog/master/kernel.json
+RUN mkdir -p ${HOME}/.local/share/jupyter/kernels/jswipl && cd ${HOME}/.local/share/jupyter/kernels/jswipl && wget https://raw.githubusercontent.com/targodan/jupyter-swi-prolog/master/kernel.json
 
 WORKDIR ${HOME}
