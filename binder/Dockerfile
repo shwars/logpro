@@ -1,5 +1,5 @@
 FROM swipl:latest
-RUN apt-get update && apt-get install python3
+RUN apt-get update && apt-get install -y python3.6
 RUN pip install --no-cache notebook
 
 USER root
