@@ -1,9 +1,9 @@
 FROM swipl:latest
-RUN apt-get update && apt-get install -y python3.6
-RUN pip install --no-cache notebook
+RUN apt-get update && apt-get install -y python3
+RUN pip3 install --no-cache notebook
 
 USER root
-RUN python -m pip install --upgrade jswipl
+RUN python3 -m pip install --upgrade jswipl
 
 ### create user with a home directory
 ARG NB_USER
