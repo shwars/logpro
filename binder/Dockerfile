@@ -1,7 +1,8 @@
-FROM python:3.7-slim
+FROM python:3.7
 RUN pip install --no-cache notebook
 
 USER root
+ARG APT_KEY_DONT_WARN_ON_DANGEROUS_USAGE=DontWarn
 RUN apt-get update && apt-get install -y software-properties-common gnupg
 RUN apt-add-repository ppa:swi-prolog/stable
 RUN apt-get update && apt-get install -y swi-prolog
