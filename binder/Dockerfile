@@ -1,11 +1,8 @@
-FROM python:3.7
+FROM swipl:latest
+RUN apt-get update && apt-get install python3
 RUN pip install --no-cache notebook
 
 USER root
-ARG APT_KEY_DONT_WARN_ON_DANGEROUS_USAGE=DontWarn
-RUN apt-get update && apt-get install -y software-properties-common gnupg
-RUN apt-add-repository ppa:swi-prolog/stable
-RUN apt-get update && apt-get install -y swi-prolog
 RUN python -m pip install --upgrade jswipl
 
 ### create user with a home directory
