@@ -2,7 +2,8 @@ FROM python:3.7-slim
 RUN pip install --no-cache notebook
 
 USER root
-RUN apt-get install software-properties-common
+RUN apt-get update && apt-get install software-properties-common
+RUN apt-get update && apt-get install python-software-properties
 RUN apt-add-repository ppa:swi-prolog/stable
 RUN apt-get update
 RUN apt-get install swi-prolog
